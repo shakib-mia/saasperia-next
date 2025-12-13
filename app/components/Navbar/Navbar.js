@@ -1,13 +1,44 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Navbar = () => {
   const [navbarVisible, setNavbarVisible] = useState(false);
+  const navbarRef = useRef(null);
+
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!navbarRef.current) return;
+
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY.current) {
+        // scrolling down
+        navbarRef.current.style.top = "-10rem";
+      } else {
+        // scrolling up
+        navbarRef.current.style.top = "0";
+      }
+
+      navbarRef.current.style.transition = "all 0.5s ease";
+      navbarRef.current.style.position = "fixed";
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <nav
       className="bg-white/70 backdrop-blur py-3 fixed top-0 left-0 w-full z-50 shadow"
       id="navbar"
+      ref={navbarRef}
     >
       <div className="container mx-auto flex items-center justify-between">
         {/* <!-- Left: Logo --> */}
@@ -25,26 +56,20 @@ const Navbar = () => {
           <Link href="/" className="text-gray-700 hover:text-indigo-600">
             Home
           </Link>
+          <Link href="/about" className="text-gray-700 hover:text-indigo-600">
+            About
+          </Link>
           <Link
             href="/services"
             className="text-gray-700 hover:text-indigo-600"
           >
             Services
           </Link>
-          <Link
-            href="/features"
-            className="text-gray-700 hover:text-indigo-600"
-          >
-            Features
-          </Link>
+
           <Link href="/plans" className="text-gray-700 hover:text-indigo-600">
             Plans
           </Link>
-          <Link
-            href="https://templatehearth.vercel.app/"
-            target="_blank"
-            className="text-gray-700 hover:text-indigo-600"
-          >
+          <Link href="/contact" className="text-gray-700 hover:text-indigo-600">
             Contact
           </Link>
         </div>
@@ -94,17 +119,18 @@ const Navbar = () => {
           Home
         </Link>
         <Link
+          href="/about"
+          className="block text-gray-700 hover:bg-primary hover:text-white py-2 container transition"
+        >
+          About
+        </Link>
+        <Link
           href="/services"
           className="block text-gray-700 hover:bg-primary hover:text-white py-2 container transition"
         >
           Services
         </Link>
-        <Link
-          href="/features"
-          className="block text-gray-700 hover:bg-primary hover:text-white py-2 container transition"
-        >
-          Features
-        </Link>
+
         <Link
           href="/plans"
           className="block text-gray-700 hover:bg-primary hover:text-white py-2 container transition"
@@ -112,8 +138,7 @@ const Navbar = () => {
           Plans
         </Link>
         <Link
-          href="https://templatehearth.vercel.app/"
-          target="_blank"
+          href="/contact"
           className="block text-gray-700 hover:bg-primary hover:text-white py-2 container transition"
         >
           Contact

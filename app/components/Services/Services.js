@@ -15,14 +15,14 @@ const Services = async ({ route }) => {
   return (
     <section className="container">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {services.map(({ _id, ...service }) => (
-          <Service key={_id} {...service} />
+        {services.map(({ _id, ...service }, key) => (
+          <Service key={_id} id={key} {...service} />
         ))}
       </div>
       {route ? (
         <></>
       ) : (
-        <div className="flex mt-12 justify-center">
+        <div className="flex mt-12 justify-center" data-animate="fade-in-left">
           <Link href={"/services"} className="button">
             Explore More
           </Link>

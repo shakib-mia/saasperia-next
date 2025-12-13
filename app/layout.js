@@ -1,4 +1,7 @@
+import Animation from "./components/Animation/Animation";
+import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
+import Newsletter from "./components/Newsletter/Newsletter";
 import "./globals.css";
 
 export const metadata = {
@@ -10,8 +13,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <Animation />
         <Navbar />
         {children}
+        <Newsletter />
+        <Footer />
       </body>
     </html>
   );
