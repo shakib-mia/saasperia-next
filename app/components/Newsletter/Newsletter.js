@@ -20,7 +20,7 @@ const Newsletter = () => {
   return (
     //    <!-- Subscribe to newsletter -->
     <section className="container grid grid-cols-1 lg:grid-cols-2 gap-4">
-      <aside data-animate="fade-in-left">
+      <aside>
         <h4>Subscribe to our newsletter to get latest news on your inbox.</h4>
       </aside>
 
@@ -35,13 +35,13 @@ const Newsletter = () => {
           className="h-fit"
           id="email"
           placeholder="Enter Your Email Address"
-          data-animate="fade-in-right"
+          // data-animate="fade-in-right"
         />
         <button
           type="submit"
           className="h-fit"
-          data-animate="fade-in-right"
-          data-delay="500ms"
+          // data-animate="fade-in-right"
+          // data-delay="500ms"
         >
           Subscribe
         </button>
