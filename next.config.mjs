@@ -2,8 +2,16 @@
 const nextConfig = {
   images: {
     remotePatterns: [
-      new URL("https://i.ibb.co/**"),
-      new URL("https://randomuser.me/**/*"),
+      {
+        protocol: "https",
+        hostname: "i.ibb.co",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "randomuser.me",
+        pathname: "/**",
+      },
     ],
   },
 };
