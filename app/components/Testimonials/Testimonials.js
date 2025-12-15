@@ -46,7 +46,17 @@ const Testimonials = () => {
     // <!-- =====  Testimonial Section  ===== -->
     <section className="bg-[#F4F7FA]">
       <div className="container">
-        <Swiper slidesPerView={2} autoplay modules={[Autoplay]}>
+        <Swiper
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+          }}
+          modules={[Autoplay]}
+        >
           {testimonials.map(({ image, name, role, heading, details }, key) => (
             <SwiperSlide key={key}>
               <div className="text-center">
@@ -58,8 +68,8 @@ const Testimonials = () => {
                   className="w-16! mx-auto aspect-square rounded-full"
                   unoptimized
                 />
-                <h5 className="mt-11">{`"${heading}"`}</h5>
-                <p className="py-6">{details}</p>
+                <h5 className="mt-8 lg:mt-11">{`"${heading}"`}</h5>
+                <p className="py-4 lg:py-6">{details}</p>
                 <h6>{name}</h6>
                 <p>{role}</p>
               </div>

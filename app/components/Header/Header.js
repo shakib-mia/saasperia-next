@@ -7,11 +7,9 @@ const Header = () => {
   return (
     // <!--  HEADER SECTION START  -->
     <header className="container pt-16 mt-20">
-      <div className="md:w-7/12 mx-auto text-center space-y-4 lg:space-y-6">
+      <div className="md:w-7/12 lg:w-8/12 xl:w-7/12 mx-auto text-center space-y-4 lg:space-y-6">
         {/* <!-- Section Heading --> */}
-        <h2 className="w-5/6 mx-auto" data-animate="fade-in-left">
-          Get More Done with Your Remote Team
-        </h2>
+        <h1 data-animate="fade-in-left">Get More Done with Your Remote Team</h1>
 
         {/* <!-- Intro Paragraph --> */}
         <p data-animate="fade-in-left" data-delay="100">

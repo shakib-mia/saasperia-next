@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Input from "../Input/Input";
 import Checkbox from "../Checkbox/Checkbox";
+import Swal from "sweetalert2";
 
 // export const generateMetadata = () => {
 //   return {
@@ -27,7 +28,13 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(e.target.email.value, e.target.password.value);
+    // console.log(e.target.email.value, e.target.password.value);
+    Swal.fire({
+      icon: "success",
+      title: "Logging in Successful",
+      text: "You can now use your system.",
+      confirmButtonText: "Go to Dashboard",
+    }).then(() => route.push("/"));
   };
 
   return (
