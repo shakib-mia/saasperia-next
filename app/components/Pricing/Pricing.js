@@ -8,7 +8,7 @@ const Pricing = () => {
       billing: "One time purchase",
       description:
         "With lots of unique blocks, you can easily build a page without coding. Build your next landing page.",
-      ctaText: "Get Started Free",
+      ctaText: "Get Started Now",
       ctaLink: "https://templatehearth.vercel.app/",
     },
     {
@@ -17,7 +17,7 @@ const Pricing = () => {
       billing: "One time purchase",
       description:
         "With lots of unique blocks, you can easily build a page without coding. Build your next landing page.",
-      ctaText: "Get Started Free",
+      ctaText: "Get Started Now",
       ctaLink: "https://templatehearth.vercel.app/",
     },
     {
@@ -26,7 +26,7 @@ const Pricing = () => {
       billing: "One time purchase",
       description:
         "With lots of unique blocks, you can easily build a page without coding. Build your next landing page.",
-      ctaText: "Get Started Free",
+      ctaText: "Get Started Now",
       ctaLink: "https://templatehearth.vercel.app/",
     },
   ];
