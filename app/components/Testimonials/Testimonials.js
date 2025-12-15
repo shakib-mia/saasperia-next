@@ -56,6 +56,7 @@ const Testimonials = () => {
                   src={image}
                   alt={name}
                   className="w-16! mx-auto aspect-square rounded-full"
+                  unoptimized
                 />
                 <h5 className="mt-11">{`"${heading}"`}</h5>
                 <p className="py-6">{details}</p>
