@@ -9,9 +9,9 @@ export const generateMetadata = () => {
 
 const page = () => {
   return (
-    <div>
+    <>
       <ResetPassword />
-    </div>
+    </>
   );
 };
 

@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Input from "../Input/Input";
 import Checkbox from "../Checkbox/Checkbox";
+import Swal from "sweetalert2";
+import { useRouter } from "next/navigation";
 // import Checkbox from "../Checkbox/Checkbox";
 
 // export const generateMetadata = () => {
@@ -15,6 +17,7 @@ import Checkbox from "../Checkbox/Checkbox";
 const Signup = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
+  const route = useRouter();
 
   const options = [{ label: "Remember Me", value: "rememberme" }];
 
@@ -28,7 +31,21 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(e.target.email.value, e.target.password.value);
+    if (e.target.password.value !== e.target["confirm-password"].value) {
+      Swal.fire({
+        icon: "error",
+        title: "Passwords do not match",
+        text: "Please make sure both password fields are identical.",
+        confirmButtonText: "Okay",
+      });
+    } else {
+      Swal.fire({
+        icon: "success",
+        title: "Registration Successful",
+        text: "You can now login with your credentials.",
+        confirmButtonText: "Login",
+      }).then(() => route.push("/login"));
+    }
   };
 
   return (

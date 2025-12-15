@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import hero from "./../../assets/images/hero.jpg";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -20,16 +21,14 @@ const Header = () => {
 
         {/* <!-- CTA Buttons --> */}
         <div className="flex gap-5 mt-2 px-4 lg:w-2/3 mx-auto">
-          <a
+          <Link
             data-animate="fade-in-left"
             data-delay="300"
-            href="https://templatehearth.vercel.app/"
-            target="_blank"
-            rel="noreferrer"
+            href="/signup"
             className="w-1/2 button"
           >
             Get Started
-          </a>
+          </Link>
           <a
             data-animate="fade-in-left"
             data-delay="200"

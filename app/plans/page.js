@@ -1,6 +1,7 @@
 import React from "react";
 import Pricing from "../components/Pricing/Pricing";
 import PageHeader from "../components/PageHeader/PageHeader";
+import Faq from "../components/Faq/Faq";
 
 export const generateMetadata = () => {
   return {
@@ -17,6 +18,9 @@ const page = () => {
           coding. Build your next landing page.`}
       />
       <Pricing />
+      <section className="container">
+        <Faq />
+      </section>
     </>
   );
 };
