@@ -109,7 +109,7 @@ h6 {
 
 button,
 .button {
-  @apply bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/10 hover:text-primary transition cursor-pointer font-gilroy-bold;
+  @apply bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/10 hover:text-primary transition cursor-pointer font-gilroy-bold disabled:bg-primary/10 disabled:text-black/10 disabled:cursor-not-allowed;
 }
 
 .button-secondary {
@@ -148,4 +148,23 @@ footer {
 input,
 textarea {
   @apply border border-light w-full py-3 px-5 rounded-lg focus:outline-none resize-none;
+}
+
+.loader {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #473bf0;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
 }

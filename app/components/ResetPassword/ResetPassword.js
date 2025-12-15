@@ -30,15 +30,10 @@ const ResetPassword = () => {
 
   return (
     <>
-      <div
-        className="pt-16"
-        // style={{
-        //   paddingBlock: document.getElementById("navbar")?.clientHeight + "px",
-        // }}
-      >
+      <>
         <header className="container pt-24">
           <h1 className="text-center">Reset Password</h1>
-          <p className="text-center mt-4">
+          <p className="text-center mt-2">
             Enter your email to get reset link{" "}
           </p>
         </header>
@@ -46,7 +41,7 @@ const ResetPassword = () => {
           <div className="lg:w-1/3 mx-auto">
             <form
               onSubmit={handleSubmit}
-              className="mt-4 md:mt-8 lg:mt-16 bg-white p-6 shadow-lg rounded-lg space-y-6"
+              className="mt-4 md:mt-8 lg:mt-10 bg-white p-6 shadow-lg rounded-lg space-y-6"
             >
               <Input
                 label="Email"
@@ -54,10 +49,7 @@ const ResetPassword = () => {
                 placeholder="Enter Your Email Address Here"
               />
 
-              <button
-                type="submit"
-                className="w-full py-3 font-bold tracking-wider"
-              >
+              <button type="submit" className="w-full py-3 tracking-wider">
                 Send Reset Link
               </button>
             </form>
@@ -73,7 +65,7 @@ const ResetPassword = () => {
             </Link>
           </p>
         </div>
-      </div>
+      </>
     </>
   );
 };

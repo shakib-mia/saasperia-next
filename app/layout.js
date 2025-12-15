@@ -1,5 +1,6 @@
 import Animation from "./components/Animation/Animation";
 import Footer from "./components/Footer/Footer";
+import Loader from "./components/Loader/Loader";
 import Navbar from "./components/Navbar/Navbar";
 import Newsletter from "./components/Newsletter/Newsletter";
 import "./globals.css";

@@ -13,8 +13,8 @@ import Checkbox from "../Checkbox/Checkbox";
 // };
 
 const Signup = () => {
-  const [navbarHeight, setNavbarHeight] = useState(0);
   const [rememberMe, setRememberMe] = useState(false);
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   const options = [{ label: "Remember Me", value: "rememberme" }];
 
@@ -36,7 +36,7 @@ const Signup = () => {
       <>
         <header className="container pt-24">
           <h1 className="text-center">Sign Up</h1>
-          <p className="text-center mt-4">
+          <p className="text-center mt-2">
             To get started, you need to sign up here.
           </p>
         </header>
@@ -44,29 +44,33 @@ const Signup = () => {
           <div className="lg:w-1/2 mx-auto">
             <form
               onSubmit={handleSubmit}
-              className="mt-4 md:mt-8 lg:mt-16 bg-white p-6 shadow-lg rounded-lg space-y-6"
+              className="mt-4 md:mt-8 lg:mt-10 bg-white p-6 shadow-lg rounded-lg space-y-6"
             >
               <Input
                 label="First and Last Name"
                 name="name"
                 type="name"
                 placeholder="i.e. John Doe"
+                required
               />
               <Input
                 label="Email"
                 name="email"
                 type="email"
                 placeholder="i.e. john@mail.com"
+                required
               />
               <Input
                 label="Password"
                 placeholder="Enter Your Password Here"
+                required
                 type="password"
                 name="password"
               />
               <Input
                 label="Confirm Password"
                 placeholder="Re-Type Your Password Here"
+                required
                 type="password"
                 name="confirm-password"
               />
@@ -86,15 +90,16 @@ const Signup = () => {
                       </Link>
                     </>
                   }
-                  onChange={(e) => setRememberMe(e)}
+                  onChange={(e) => setAcceptedTerms(e)}
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3 font-bold tracking-wider"
+                disabled={!acceptedTerms}
+                className="w-full py-3 tracking-wider"
               >
-                Sign In
+                Register
               </button>
             </form>
           </div>
