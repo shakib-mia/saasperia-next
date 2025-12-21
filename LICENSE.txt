@@ -1,0 +1,53 @@
+Paid Template License – SaaSPeria Template
+Copyright (c) 2025 Template Hearth
+
+Template Name: SaaSPeria
+Niche: Project management platforms, Remote team collaboration tools, Productivity-focused SaaS startups
+Tech Stack: Next.js 16, Tailwind CSS, HearthMotion (Lenis + Animate.css)
+
+All rights reserved. This template is a **paid product** and may not be redistributed, resold, or shared
+in any form without explicit permission from Template Hearth.
+
+------------------------------------------------------------
+LICENSE TYPES
+------------------------------------------------------------
+
+1. Personal Use License
+   Allowed:
+     - Use the template for your personal website or personal portfolio only.
+   Not Allowed:
+     - Use for client projects
+     - Resell, redistribute, or share
+     - Claim as your own
+   Updates & Support: Not included
+
+2. Single Client / Commercial License
+   Allowed:
+     - Use the template for 1 client project (commercial or personal)
+     - Modify the template as needed for that project
+   Not Allowed:
+     - Use for multiple clients
+     - Resell, redistribute, or share
+     - Claim as your own
+   Updates & Support: Included for licensed user
+
+3. Extended / Multi-Use License
+   Allowed:
+     - Use the template for multiple client projects
+     - Modify and customize as needed
+   Not Allowed:
+     - Resell, redistribute, or share the template files
+     - Claim as your own
+   Updates & Support: Included for licensed user
+
+------------------------------------------------------------
+GENERAL TERMS
+------------------------------------------------------------
+
+- Distribution: The template cannot be shared, sold, or distributed in any form except as part of a licensed project.
+- Warranty: Provided “AS IS” without any warranty of any kind. Template Hearth is not liable for any damages
+  or issues arising from the use of the template.
+- Support: Support and updates are available only for licensed users.
+
+------------------------------------------------------------
+By using this template, you agree to comply with the terms of the purchased license.
