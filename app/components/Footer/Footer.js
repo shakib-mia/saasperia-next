@@ -1,3 +1,5 @@
+import { servicesCollection } from "@/app/lib/mongodb";
+import Link from "next/link";
 import React from "react";
 import {
   FaFacebookF,
@@ -7,47 +9,30 @@ import {
 } from "react-icons/fa6";
 import { SiGumroad } from "react-icons/si";
 
-const Footer = () => {
+const Footer = async () => {
+  const services = await servicesCollection
+    .find({}, { projection: { title: 1, slug: 1 } })
+    .limit(4)
+    .toArray();
+
   return (
     <>
-      <footer className="container grid gap-10 lg:gap-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-5 border-y border-light">
+      <footer className="container grid gap-10 lg:gap-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-y border-light">
         {/* <!-- Company section --> */}
         <aside>
           <h6 className="mb-2 lg:mb-5">Company</h6>
           <ul className="mt-2 space-y-1">
             <li>
-              <a href="#">About</a>
+              <Link href="/about">About</Link>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <Link href="/contact">Contact</Link>
             </li>
             <li>
-              <a href="#">Careers</a>
+              <Link href="/services">Services</Link>
             </li>
             <li>
-              <a href="#">Press</a>
-            </li>
-          </ul>
-        </aside>
-
-        {/* <!-- Product section --> */}
-        <aside>
-          <h6 className="mb-2 lg:mb-5">Product</h6>
-          <ul className="mt-2 space-y-1">
-            <li>
-              <a href="#">Features</a>
-            </li>
-            <li>
-              <a href="#">Pricing</a>
-            </li>
-            <li>
-              <a href="#">News</a>
-            </li>
-            <li>
-              <a href="#">Help desk</a>
-            </li>
-            <li>
-              <a href="#">Support</a>
+              <Link href="/plans">Plans</Link>
             </li>
           </ul>
         </aside>
@@ -56,18 +41,11 @@ const Footer = () => {
         <aside>
           <h6 className="mb-2 lg:mb-5">Services</h6>
           <ul className="mt-2 space-y-1">
-            <li>
-              <a href="#">Digital Marketing</a>
-            </li>
-            <li>
-              <a href="#">Content Writing</a>
-            </li>
-            <li>
-              <a href="#">SEO for Business</a>
-            </li>
-            <li>
-              <a href="#">UI Design</a>
-            </li>
+            {services.map(({ _id, title, slug }) => (
+              <li key={_id}>
+                <Link href={`/services/${slug}`}>{title}</Link>
+              </li>
+            ))}
           </ul>
         </aside>
 
@@ -76,13 +54,7 @@ const Footer = () => {
           <h6 className="mb-2 lg:mb-5">Legal</h6>
           <ul className="mt-2 space-y-1">
             <li>
-              <a href="#">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="#">Terms & Conditions</a>
-            </li>
-            <li>
-              <a href="#">Return Policy</a>
+              <Link href="/terms-and-condition">Terms & Conditions</Link>
             </li>
           </ul>
         </aside>
